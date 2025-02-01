@@ -1,0 +1,8 @@
+utillities\BaseClass.class
+utillities\OperatorConfigDataProvider.class
+pageObjects\registrationPage.class
+stepDefinitions\RegistrationPageSteps.class
+utillities\BrowserFactory.class
+testRunner\testRunner.class
+utillities\ConfigDataProvider.class
+utillities\ActionCommands.class
