@@ -16,6 +16,7 @@ public class BrowserFactory {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--incognito");
+            options.setHeadless(true);
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
             String projectLocation = System.getProperty("user.dir");

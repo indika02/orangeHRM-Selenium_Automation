@@ -1,11 +1,12 @@
 package utillities;
 
-import com.applitools.eyes.selenium.Eyes;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -39,7 +40,7 @@ public class ActionCommands {
     }
 
     protected void waitTime(WebDriver driver, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, 100000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100000));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 

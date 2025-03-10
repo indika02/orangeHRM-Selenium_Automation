@@ -9,7 +9,6 @@ import java.util.Properties;
 
 public class ConfigDataProvider {
 
-    private static final Logger log = LoggerFactory.getLogger(ConfigDataProvider.class);
     private Properties properties;
 
     public ConfigDataProvider() {
@@ -25,10 +24,13 @@ public class ConfigDataProvider {
         }
 
     }
-    public String getOperator() {
-        return properties.getProperty("Operator");
-    }
+
     public String getBrowser() {
         return properties.getProperty("Browser");
+    }
+
+    public String getURL() {
+        String URL = properties.getProperty("URL");
+        return URL;
     }
 }
