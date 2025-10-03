@@ -3,11 +3,12 @@ package utillities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserFactory {
-
-    static WebDriver driver;
 
     public static WebDriver startApplication(WebDriver driver,String browserName) {
         if (browserName.equalsIgnoreCase("chrome")) {
@@ -16,14 +17,25 @@ public class BrowserFactory {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--incognito");
-            options.setHeadless(true);
+            options.setHeadless(false);
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
             String projectLocation = System.getProperty("user.dir");
-            System.setProperty("webdriver.firefox.driver", projectLocation+"/drivers/geckodriver");
+            System.setProperty("webdriver.gecko.driver", projectLocation+"/drivers/geckodriver.exe");
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--incognito");
+            options.setHeadless(true);
             driver = new FirefoxDriver();
-
-        } else {
+        } else if (browserName.equalsIgnoreCase("edge")) {
+            String projectLocation = System.getProperty("user.dir");
+            System.setProperty("webdriver.edge.driver", projectLocation+"/drivers/msedgedriver.exe");
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--incognito");
+            options.setHeadless(true);
+            driver = new EdgeDriver();
+        }else {
             System.out.println("Not support for " + browserName);
         }
         return driver;

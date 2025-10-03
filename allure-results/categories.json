@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Product defects",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*ElementNotFound.*",
+    "traceRegex": ".*NoSuchElementException.*"
+  },
+  {
+    "name": "Test defects",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*NullPointerException.*",
+    "traceRegex": ".*AssertionError.*"
+  },
+  {
+    "name": "Flaky tests",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*TimeoutException.*"
+  }
+]

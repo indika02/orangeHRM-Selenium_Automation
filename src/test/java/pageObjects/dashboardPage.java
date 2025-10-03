@@ -29,10 +29,6 @@ public class dashboardPage extends ActionCommands {
         click(driver,logoutBtn);
     }
 
-    public void closeWindow(){
-        driver.close();
-    }
-
     public void enterSearchTxt(String text) {
         waitTime(driver,searchBox);
         type(driver,searchBox,text);

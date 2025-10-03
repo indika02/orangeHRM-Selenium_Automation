@@ -1,0 +1,9 @@
+{
+  "name": "QA Selenium Test Suite",
+  "type": "Maven",
+  "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+  "buildName": "Smoke Test Run",
+  "buildUrl": "http://localhost:8080/build/1",
+  "reportUrl": "http://localhost/allure-report",
+  "buildOrder": 1
+}

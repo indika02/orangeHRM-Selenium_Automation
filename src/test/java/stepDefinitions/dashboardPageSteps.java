@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pageObjects.dashboardPage;
 import utillities.BaseClass;
 
@@ -15,11 +16,7 @@ public class dashboardPageSteps {
         dashboardPage.logout();
     }
 
-    @And("Close the window")
-    public void closeWindow() {
-        dashboardPage.closeWindow();
-    }
-    @Then("^Enter the search Text as (.*)$")
+    @When("^Enter the search Text as (.*)$")
     public void enterSearchText(String text){
         dashboardPage.enterSearchTxt(text);
     }
@@ -34,12 +31,12 @@ public class dashboardPageSteps {
         dashboardPage.verifyUpgradeOption();
     }
 
-    @Then("Click the Minimize arrow in side navigation bar")
+    @When("Click the Minimize arrow in side navigation bar")
     public void minimizeSidenav(){
         dashboardPage.minimizeSidenav();
     }
 
-    @Then("Click the help button in dashboard")
+    @When("Click the help button in dashboard")
     public void clickHelpBtn(){
         dashboardPage.clickHelpBtn();
     }

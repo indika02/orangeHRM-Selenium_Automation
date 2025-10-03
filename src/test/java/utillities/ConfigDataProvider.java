@@ -28,9 +28,9 @@ public class ConfigDataProvider {
     public String getBrowser() {
         return properties.getProperty("Browser");
     }
-
     public String getURL() {
         String URL = properties.getProperty("URL");
         return URL;
     }
 }
+
